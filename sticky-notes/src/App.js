@@ -9,6 +9,7 @@ const App = () => {
     const newNote = {
       id: Date.now(),
       text: "",
+      color: '#fef68a',
       isEditing: true,
     };
     setNotes([...notes, newNote]);
@@ -26,6 +27,13 @@ const App = () => {
     setNotes(notes.filter((note) => note.id !== id));
   };
 
+  const updateNoteColor = (id, color) => {
+    const updatedNotes = notes.map(note =>
+      note.id === id ? { ...note, color } : note
+    );
+    setNotes(updatedNotes);
+  };
+
   return (
     <div className="App">
       <span> New Sticky Note </span>
@@ -36,6 +44,7 @@ const App = () => {
         notes={notes}
         updateNote={updateNote}
         deleteNote={deleteNote}
+        updateNoteColor={updateNoteColor}
       />
     </div>
   );

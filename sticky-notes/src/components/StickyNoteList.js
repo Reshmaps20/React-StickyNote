@@ -1,6 +1,6 @@
 import StickyNote from "./StickyNote";
 
-const StickyNoteList = ({ notes, updateNote, deleteNote }) => {
+const StickyNoteList = ({ notes, updateNote, deleteNote, updateNoteColor }) => {
   return (
     <div className="stickynotes-list">
       {notes.map((note) => (
@@ -8,6 +8,7 @@ const StickyNoteList = ({ notes, updateNote, deleteNote }) => {
           note={note}
           updateNote={updateNote}
           deleteNote={deleteNote}
+          updateNoteColor={updateNoteColor}
         />
       ))}
     </div>
