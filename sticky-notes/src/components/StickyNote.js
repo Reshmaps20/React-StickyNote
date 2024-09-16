@@ -32,6 +32,7 @@ const StickyNote = ({ note, updateNote, deleteNote, updateNoteColor }) => {
         {colors.map((color) => (
           <div
             key={color}
+            data-testid={`color-option-${color}`}
             onClick={() => handleColorChange(color)}
             style={colorItemStyle(color)}
           />
@@ -59,8 +60,7 @@ const StickyNote = ({ note, updateNote, deleteNote, updateNoteColor }) => {
       <button
         className="button"
         onClick={() => setIsEditing(true)}
-        disabled={isEditing}
-      >
+        disabled={isEditing}>
         Edit
       </button>
 
